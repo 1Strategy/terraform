@@ -14,6 +14,15 @@ terraform {
   }
 }
 
+# Create resources
+module "test_instance" {
+  source = "github.com/1Strategy/terraform//tf_aws_modules/"
+  ssh_key = "ragraves_key"
+  startup_script = <<EOF
+sudo apt-get update -y
+EOF
+}
+
 # data "terraform_remote_state" "remote_state" {
 #   backend = "s3"
 #   config {
@@ -24,13 +33,3 @@ terraform {
 #     key    = "terraform-example.tfstate"
 #   }
 # }
-
-
-# Create resources
-module "test_instance" {
-  source = "github.com/1Strategy/terraform//tf_aws_modules/"
-  ssh_key = "ragraves_key"
-  startup_script = <<EOF
-sudo apt-get update -y
-EOF
-}
