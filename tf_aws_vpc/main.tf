@@ -2,11 +2,7 @@
 # Establish provider
 provider "aws" {
   region = "us-west-2"
-  assume_role = {
-    role_arn = "arn:aws:iam::842337631775:role/1S-Admins"
-    session_name = "test"
-    external_id = "terraform"
-  }
+  profile = "sandbox"
 }
 
 terraform {
@@ -31,10 +27,10 @@ terraform {
 
 
 # Create resources
-# module "instance" {
-#   source = "github.com/1Strategy/terraform//tf_aws_modules/"
-#
-# #   startup_script = <<EOF
-# # sudo apt-get update -y
-# # EOF
-# }
+module "instance" {
+  source = "github.com/1Strategy/terraform//tf_aws_modules/"
+
+#   startup_script = <<EOF
+# sudo apt-get update -y
+# EOF
+}
