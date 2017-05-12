@@ -1,10 +1,40 @@
+
 # Establish provider
 provider "aws" {
   region = "us-west-2"
-  profile = "sandbox"
+  assume_role = {
+    role_arn = "arn:aws:iam::842337631775:role/1S-Admins"
+    session_name = "test"
+    external_id = "terraform"
+  }
 }
 
-# Create resources
-module "instance" {
-  source = "github.com/1Strategy/terraform//tf_aws_modules/"
+terraform {
+  backend "s3" {
+    region = "us-west-2"
+    profile = "sandbox"
+    bucket = "1s-terraform-example"
+    key = "terraform-example.tfstate"
+  }
 }
+
+# data "terraform_remote_state" "remote_state" {
+#   backend = "s3"
+#   config {
+#     region = "us-west-2"
+#     profile = "management"
+#     role_arn = "arn:aws:iam::842337631775:role/1S-Admins"
+#     bucket = "1s-terraform-example"
+#     key    = "terraform-example.tfstate"
+#   }
+# }
+
+
+# Create resources
+# module "instance" {
+#   source = "github.com/1Strategy/terraform//tf_aws_modules/"
+#
+# #   startup_script = <<EOF
+# # sudo apt-get update -y
+# # EOF
+# }
