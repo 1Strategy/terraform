@@ -10,5 +10,5 @@ resource "aws_instance" "test_instance" {
 
   user_data = "${var.startup_script}"
 
-  key_pair = "${var.ssh_key}"
+  key_name = "${var.ssh_key}"
 }
