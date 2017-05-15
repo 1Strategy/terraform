@@ -2,13 +2,13 @@
 # VARIABLES
 ################################################################################
 
-variable "startup_script" {
-  description = "A script to be run when the instance is spun up; the User Data."
-}
-
-variable "ssh_key" {
-  description = "The key pair that will be used to ssh into this instance."
-}
+# variable "startup_script" {
+#   description = "A script to be run when the instance is spun up; the User Data."
+# }
+#
+# variable "ssh_key" {
+#   description = "The key pair that will be used to ssh into this instance."
+# }
 
 ################################################################################
 # OUTPUTS
