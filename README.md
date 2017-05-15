@@ -48,7 +48,7 @@ Viewing the remote state file in this manner will give you information about the
 
 ### CREDENTIALS & PROFILES
 
-The latest version of terraform supports profile configurations within your *`~/.aws/config`* file. This example uses my profile named **sandbox** to spin up instances. If you don't have a profile named **sandox** in your config file, set the profile in the *provider* stanza of *`ec2_example/main.tf`* to reflect the correct profile.
+The latest version of terraform supports profile configurations within your *`~/.aws/config`* file. This example uses my profile named **management** to spin up instances. If you don't have a profile named **management** in your config file, set the profile in the *provider{ }* stanza of *`ec2_example/main.tf`* to reflect the correct profile.
 
 ### ERRORS
 
