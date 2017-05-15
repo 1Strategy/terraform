@@ -1,14 +1,15 @@
 # Terraform Repo For Learnin' Gud
 
 ### Contents
-
-**terraform/**
-└ README.md
-└ **modules/**
+<p>
+terraform<br>
+└ README.md<br>
+└ modules<br>
+&nbsp;&nbsp;&nbsp;&nbsp; └ main.tf<br>
+&nbsp;&nbsp;&nbsp;&nbsp; └ variables.tf<br>
+└ ec2_example<br>
 &nbsp;&nbsp;&nbsp;&nbsp; └ main.tf
-&nbsp;&nbsp;&nbsp;&nbsp; └ variables.tf
-└ **ec2_example/**
-&nbsp;&nbsp;&nbsp;&nbsp; └ main.tf
+</p>
 
 **`modules/main.tf`**
 This is the configuration file for modules that can be used in this example. Resources declared in this file can be instantiated within *`ec2_example/main.tf`*.
