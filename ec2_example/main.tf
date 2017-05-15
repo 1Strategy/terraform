@@ -21,20 +21,19 @@ terraform {
 # Create resources
 module "test_instance" {
   source = "github.com/1Strategy/terraform//modules/"
-  # ssh_key = "ragraves_key"
-#   startup_script = <<EOF
-# yum update -y \
-# yum install -y httpd24 php56 mysql55-server php56-mysqlnd \
-# service httpd start \
-# chkconfig httpd on \
-# groupadd www \
-# usermod -a -G www ec2-user \
-# chown -R root:www /var/www \
-# chmod 2775 /var/www \
-# find /var/www -type d -exec chmod 2775 {} + \
-# find /var/www -type f -exec chmod 0664 {} + \
-# echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
-# EOF
+  startup_script = <<EOF
+sudo yum update -y \
+sudo yum install -y httpd24 php56 mysql55-server php56-mysqlnd \
+sudo service httpd start \
+sudo chkconfig httpd on \
+sudo groupadd www \
+sudo usermod -a -G www ec2-user \
+sudo chown -R root:www /var/www \
+sudo chmod 2775 /var/www \
+sudo find /var/www -type d -exec chmod 2775 {} + \
+sudo find /var/www -type f -exec chmod 0664 {} + \
+sudo su 'echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php'
+EOF
 }
 
 # data "terraform_remote_state" "remote_state" {
