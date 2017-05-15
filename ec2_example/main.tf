@@ -16,7 +16,7 @@ terraform {
 
 # Create resources
 module "test_instance" {
-  source = "github.com/1Strategy/terraform//tf_aws_modules/"
+  source = "github.com/1Strategy/terraform//modules/"
   # ssh_key = "ragraves_key"
 #   startup_script = <<EOF
 # yum update -y \
