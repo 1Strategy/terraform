@@ -1,3 +1,4 @@
 .DS_Store
-/tf_aws_vpc/.terraform/*
-/tf_aws_modules/.terraform/*
+/ec2_example/.terraform/*
+/modules/.terraform/*
+/images/*
