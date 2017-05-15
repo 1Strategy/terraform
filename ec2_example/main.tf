@@ -21,6 +21,7 @@ terraform {
 # Create resources
 module "test_instance" {
   source = "github.com/1Strategy/terraform//modules/"
+  key_name = "ragraves_key"
   startup_script = <<EOF
 sudo yum update -y \
 sudo yum install -y httpd24 php56 mysql55-server php56-mysqlnd \
@@ -32,7 +33,7 @@ sudo chown -R root:www /var/www \
 sudo chmod 2775 /var/www \
 sudo find /var/www -type d -exec chmod 2775 {} + \
 sudo find /var/www -type f -exec chmod 0664 {} + \
-sudo su 'echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php'
+sudo su `echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php'`
 EOF
 }
 
