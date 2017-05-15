@@ -1,4 +1,4 @@
 .DS_Store
 /ec2_example/.terraform/*
-/modules/.terraform/*
+/modules/.terraform/
 /images/*
