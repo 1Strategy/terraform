@@ -21,7 +21,7 @@ terraform {
 # Create resources
 module "test_instance" {
   source = "github.com/1Strategy/terraform/modules/"
-  key_name = "ragraves_key"
+  ssh_key = "ragraves_key"
   name = "My-Terraform-Instance"
   startup_script = "${path.root}/startup.sh"
 }
