@@ -1,3 +1,2 @@
 .DS_Store
-/ec2_example/.terraform/*
-/modules/.terraform/*
+.terraform/
