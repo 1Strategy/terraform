@@ -1,5 +1,12 @@
-resource "aws_iam_role" "syn_tpf_ec2_instance_role" {
-  name = "${var.stack_id}_ec2_instance_role"
+# Instance Profile
+resource "aws_iam_instance_profile" "ecs_instance_profile" {
+  name  = "${var.demo_name}_instance_profile"
+  role = "${aws_iam_role.instance_role.name}"
+}
+
+# Instance Role w/Trust Relationship
+resource "aws_iam_role" "instance_role" {
+  name = "${var.demo_name}_instance_role"
 
   assume_role_policy = <<EOF
 {
@@ -18,9 +25,10 @@ resource "aws_iam_role" "syn_tpf_ec2_instance_role" {
 EOF
 }
 
-resource "aws_iam_role_policy" "syn_tpf_ec2_instance_role_policy" {
-  name = "${var.stack_id}_ec2_instance_role_policy"
-  role = "${aws_iam_role.syn_tpf_ec2_instance_role.name}"
+# Instance Role Policy
+resource "aws_iam_role_policy" "instance_role_policy" {
+  name = "${var.demo_name}_instance_role_policy"
+  role = "${aws_iam_role.instance_role.name}"
 
   policy = <<EOF
 {
@@ -57,9 +65,3 @@ resource "aws_iam_role_policy" "syn_tpf_ec2_instance_role_policy" {
 }
 EOF
 }
-
-resource "aws_iam_instance_profile" "syn_tpf_instance_profile" {
-  name  = "${var.stack_id}_instance_profile"
-  role = "${aws_iam_role.syn_tpf_ec2_instance_role.name}"
-}
-API Training Shop Blog About

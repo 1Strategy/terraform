@@ -1,5 +1,6 @@
-resource "aws_iam_role" "syn_tpf_service_role" {
-  name = "${var.stack_id}_service_role"
+# Cluster Service Role
+resource "aws_iam_role" "service_role" {
+  name = "${var.demo_name}_service_role"
 
   assume_role_policy = <<EOF
 {
@@ -18,9 +19,9 @@ resource "aws_iam_role" "syn_tpf_service_role" {
 EOF
 }
 
-resource "aws_iam_role_policy" "syn_tpf_service_policy" {
-  name = "${var.stack_id}_service_policy"
-  role = "${aws_iam_role.syn_tpf_service_role.name}"
+resource "aws_iam_role_policy" "service_policy" {
+  name = "${var.demo_name}_service_policy"
+  role = "${aws_iam_role.service_role.name}"
 
   policy = <<EOF
 {
@@ -35,11 +36,7 @@ resource "aws_iam_role_policy" "syn_tpf_service_policy" {
         "elasticloadbalancing:DeregisterTargets",
         "elasticloadbalancing:Describe*",
         "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
-        "elasticloadbalancing:RegisterTargets",
-        "ecr:GetAuthorizationToken",
-        "ecr:BatchCheckLayerAvailability",
-        "ecr:GetDownloadUrlForLayer",
-        "ecr:BatchGetImage"
+        "elasticloadbalancing:RegisterTargets"
       ],
       "Resource": "*"
     }
