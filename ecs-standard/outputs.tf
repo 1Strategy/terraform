@@ -17,3 +17,19 @@
 output "alb_dns_name" {
   value = "${aws_alb.load_balancer.dns_name}"
 }
+
+output "subnets" {
+    value = "${aws_subnet.subnets.*.id}"
+}
+
+output "alb_security_group" {
+    value = "${aws_security_group.alb.id}"
+}
+
+output "ecs_security_group" {
+    value = "${aws_security_group.ecs.id}"
+}
+
+output "vpc_id" {
+    value = "${aws_vpc.demo_vpc.id}"
+}

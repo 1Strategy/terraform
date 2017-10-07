@@ -4,7 +4,7 @@
 
 variable "aws_region" {
   description = "The AWS region we are using."
-  default     = "us-east-1"
+  default     = "us-west-2"
 }
 
 variable "demo_name" {
@@ -21,7 +21,8 @@ variable "vpc_cidr_block"{
 }
 
 variable "subnet_cidr_blocks" {
-    default = ["10.25.0.0/19", "10.25.64.0/19", "10.25.32.0/19",  "10.25.96.0/19"]
+    default = ["10.25.0.0/19", "10.25.32.0/19"]
+    # , "10.25.64.0/19", "10.25.96.0/19"]
 }
 
 variable "azs"{
@@ -37,11 +38,11 @@ variable "ecr-repo-name" {
 }
 
 ################################################################################
-# ECS
+# ECS Cluster
 ################################################################################
 
 variable "ecs_cluster_name" {
-  default = "1S ECS Demo Cluster"
+  default = "1S-ECS-Demo-Cluster"
 }
 
 ################################################################################
@@ -50,7 +51,7 @@ variable "ecs_cluster_name" {
 
 variable "docker_image" {
   description = "location of docker image for our ECS service"
-  default     = "nginx"
+  default     = "842337631775.dkr.ecr.us-west-2.amazonaws.com/1s-ecs-demo-repo:nginx_1.0.0"
 }
 
 variable "container_memory" {
@@ -70,7 +71,8 @@ variable "container_port" {
 
 variable "ami_image_id" {
   description = "Image ID for the AMI"
-  default     = "ami-ec33cc96"
+  # AMI for ECS optimized instances in Oregon
+  default     = "ami-29f80351"
   }
 
 variable "instance_type" {

@@ -6,7 +6,7 @@ resource "aws_ecs_task_definition" "task_def" {
   {
     "cpu": 0,
     "essential": true,
-    "image": "${var.docker_image}:latest",
+    "image": "${var.docker_image}",
     "memory": ${var.container_memory},
     "name": "${var.demo_name}_container",
     "portMappings": [

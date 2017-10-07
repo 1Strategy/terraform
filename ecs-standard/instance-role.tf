@@ -37,27 +37,20 @@ resource "aws_iam_role_policy" "instance_role_policy" {
     {
       "Effect": "Allow",
       "Action": [
-        "ecs:CreateCluster",
-        "ecs:DeregisterContainerInstance",
-        "ecs:DiscoverPollEndpoint",
-        "ecs:Poll",
-        "ecs:RegisterContainerInstance",
-        "ecs:StartTelemetrySession",
-        "ecs:Submit*",
-        "ecr:GetAuthorizationToken",
-        "ecr:BatchCheckLayerAvailability",
-        "ecr:GetDownloadUrlForLayer",
-        "ecr:BatchGetImage",
-        "ssm:DescribeParameters",
-        "ssm:GetParameters",
-        "ssm:ListDocuments",
-        "logs:CreateLogStream",
-        "logs:PutLogEvents",
-        "logs:PutLogEvents",
-        "logs:CreateLogStream",
-        "logs:DescribeLogStreams",
-        "logs:CreateLogGroup",
-        "cloudwatch:PutMetricData"
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:BatchGetImage",
+          "ecr:GetAuthorizationToken",
+          "ecr:GetDownloadUrlForLayer",
+          "ecs:CreateCluster",
+          "ecs:DeregisterContainerInstance",
+          "ecs:DiscoverPollEndpoint",
+          "ecs:Poll",
+          "ecs:RegisterContainerInstance",
+          "ecs:StartTelemetrySession",
+          "ecs:Submit*",
+          "ecs:UpdateContainerInstancesState",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
       ],
       "Resource": "*"
     }
@@ -65,3 +58,5 @@ resource "aws_iam_role_policy" "instance_role_policy" {
 }
 EOF
 }
+
+
