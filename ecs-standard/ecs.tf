@@ -7,7 +7,10 @@ resource "aws_ecs_cluster" "cluster" {
 resource "aws_ecs_service" "service" {
     depends_on = [
         "aws_autoscaling_group.ecs_asg",
-        "aws_alb_target_group.ecs_targets"
+        "aws_alb_target_group.ecs_targets",
+        "aws_ecs_task_definition.task_def",
+        "aws_iam_instance_profile.ecs_instance_profile",
+        "aws_alb.load_balancer"
     ]
 
     name            = "${var.demo_name}"

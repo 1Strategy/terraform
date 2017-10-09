@@ -1,5 +1,6 @@
 # Create Task Definition
 resource "aws_ecs_task_definition" "task_def" {
+    depends_on = ["aws_alb.load_balancer"]
   family                = "${var.demo_name}_task"
   container_definitions = <<DEFINITION
 [

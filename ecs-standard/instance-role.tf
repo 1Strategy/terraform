@@ -1,14 +1,15 @@
 # Instance Profile
 resource "aws_iam_instance_profile" "ecs_instance_profile" {
-  name  = "${var.demo_name}_instance_profile"
-  role = "${aws_iam_role.instance_role.name}"
+    name  = "${var.demo_name}_instance_profile"
+    role = "${aws_iam_role.instance_role.name}"
 }
 
 # Instance Role w/Trust Relationship
 resource "aws_iam_role" "instance_role" {
-  name = "${var.demo_name}_instance_role"
-
-  assume_role_policy = <<EOF
+    name = "${var.demo_name}_instance_role"
+    path = "/"
+    
+    assume_role_policy = <<EOF
 {
   "Version": "2008-10-17",
   "Statement": [

@@ -11,6 +11,8 @@
 
 # asg
 resource "aws_autoscaling_group" "ecs_asg" {
+    depends_on = ["aws_launch_configuration.launch_config"]
+
     name                      = "${var.demo_name}_asg"
     availability_zones        = ["${var.azs}"]
     max_size                  = "${var.asg_max}"

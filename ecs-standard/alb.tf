@@ -24,6 +24,8 @@ resource "aws_alb_listener" "front_end" {
 
 # ECS Target Group
 resource "aws_alb_target_group" "ecs_targets" {
+    depends_on = ["aws_alb.load_balancer"]
+
   name     = "${replace("${var.demo_name}", "_", "-")}-tg"
   port     = 80
   protocol = "HTTP"
