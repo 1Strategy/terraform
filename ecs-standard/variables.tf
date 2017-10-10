@@ -51,7 +51,8 @@ variable "ecs_cluster_name" {
 
 variable "docker_image" {
   description = "location of docker image for our ECS service"
-  default     = "842337631775.dkr.ecr.us-west-2.amazonaws.com/1s-ecs-demo-repo:nginx_1.0.0"
+  default     = "nginx:latest"
+  # default     = "842337631775.dkr.ecr.us-west-2.amazonaws.com/1s-ecs-demo-repo:nginx_1.0.0"
 }
 
 variable "container_memory" {
@@ -61,13 +62,12 @@ variable "container_memory" {
 
 variable "container_port" {
   description = "Port number for the container."
-  default     = "8080"
+  default     = 80
 }
 
 ################################################################################
 # Launch Config
 ################################################################################
-
 
 variable "ami_image_id" {
   description = "Image ID for the AMI"
