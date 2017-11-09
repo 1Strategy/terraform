@@ -1,39 +1,39 @@
-################################################################################
-# OUTPUTS
-################################################################################
+// ################################################################################
+// # OUTPUTS
+// ################################################################################
 
-// output "repository-name" {
-//   value = "${aws_ecr_repository.test-repo.name}"
+// // output "repository-name" {
+// //   value = "${aws_ecr_repository.test-repo.name}"
+// // }
+
+// // output "repository-arn" {
+// //   value = "${aws_ecr_repository.test-repo.arn}"
+// // }
+
+// // output "repository-url" {
+// //   value = "${aws_ecr_repository.test-repo.repository_url}"
+// // }
+
+// output "alb_dns_name" {
+//   value = "${aws_alb.load_balancer.dns_name}"
 // }
 
-// output "repository-arn" {
-//   value = "${aws_ecr_repository.test-repo.arn}"
+// output "subnets" {
+//     value = "${aws_subnet.subnets.*.id}"
 // }
 
-// output "repository-url" {
-//   value = "${aws_ecr_repository.test-repo.repository_url}"
+// output "alb_security_group" {
+//     value = "${aws_security_group.alb.id}"
 // }
 
-output "alb_dns_name" {
-  value = "${aws_alb.load_balancer.dns_name}"
-}
+// output "ecs_security_group" {
+//     value = "${aws_security_group.ecs.id}"
+// }
 
-output "subnets" {
-    value = "${aws_subnet.subnets.*.id}"
-}
+// output "vpc_id" {
+//     value = "${aws_vpc.demo_vpc.id}"
+// }
 
-output "alb_security_group" {
-    value = "${aws_security_group.alb.id}"
-}
-
-output "ecs_security_group" {
-    value = "${aws_security_group.ecs.id}"
-}
-
-output "vpc_id" {
-    value = "${aws_vpc.demo_vpc.id}"
-}
-
-output "Demo_Type:" {
-    value = "${var.demo}"
-}
+// output "Demo_Type:" {
+//     value = "${var.demo}"
+// }

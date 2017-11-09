@@ -18,14 +18,6 @@ terraform {
   }
 }
 
-# Create resources
-// module "test_instance" {
-//   source = "github.com/1Strategy/terraform/modules/"
-//   ssh_key = "ragraves_key"
-//   name = "My-Terraform-Instance"
-//   startup_script = "${path.root}/startup.sh"
-// }
-
 # EC2 instance
 resource "aws_instance" "test_instance" {
   ami           = "ami-4836a428"

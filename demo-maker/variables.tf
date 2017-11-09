@@ -11,13 +11,15 @@ variable "demo_name" {
     default = "1s_ecs_demo"
 }
 
-variable "demo" {
+variable "2_Q1" {
+    description = "Do you have any special variables?"
+}
+
+variable "1_demo" {
     description = "What type of demo would you like to run?"
 }
 
-variable "Q1" {
-    description = "Do you have any special variables?"
-}
+
 
 ################################################################################
 # VPC

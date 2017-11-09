@@ -11,10 +11,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    region = "us-west-2"
-    profile = "management"
+    region   = "us-west-2"
+    profile  = "management"
     role_arn = "arn:aws:iam::842337631775:role/1S-Admins"
-    bucket = "1s-terraform-example"
-    key = "terraform-example.tfstate"
+    bucket   = "1s-terraform-example"
+    key      = "terraform-example.tfstate"
   }
 }

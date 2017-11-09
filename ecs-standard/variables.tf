@@ -22,7 +22,7 @@ variable "vpc_cidr_block"{
 
 variable "subnet_cidr_blocks" {
     default = ["10.25.0.0/19", "10.25.32.0/19"]
-    # , "10.25.64.0/19", "10.25.96.0/19"]
+    #, "10.25.64.0/19", "10.25.96.0/19"]
 }
 
 variable "azs"{
