@@ -1,4 +1,4 @@
-# Terraform Repo For Learnin' Gud
+# Repo For Learning Basic Terraform
 
 ### Contents
 <p>
